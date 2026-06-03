@@ -1,0 +1,6 @@
+{
+  "name": "An Uncertain Fairytale",
+  "description": "A small interactive journey about love and uncertainty.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
