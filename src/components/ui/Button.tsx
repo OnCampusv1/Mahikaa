@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion, HTMLMotionProps } from 'motion/react';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
   delay?: number;
