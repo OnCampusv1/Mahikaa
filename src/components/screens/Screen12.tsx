@@ -117,17 +117,33 @@ export function Screen12({ onContinue }: ScreenProps) {
                 You were supposed to say no to all of this.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 8, duration: 1 }}>
-                <p className="text-xl font-serif text-zinc-800 pb-6">
-                  But if you don't...
-                </p>
-                <motion.p 
-                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 10.5, duration: 2 }}
-                  className="text-2xl font-serif text-rose-500 italic"
-                >
-                  I'd really like that.
-                </motion.p>
-              </motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 8, duration: 1 }}>
+                  <p className="text-xl font-serif text-zinc-800 pb-6">
+                    But if you don't...
+                  </p>
+                  <motion.p 
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 10.5, duration: 2 }}
+                    className="text-2xl font-serif text-rose-500 italic pb-12"
+                  >
+                    I'd really like that. 🐣
+                  </motion.p>
+                  
+                  <motion.div
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 14, duration: 2 }}
+                    className="mt-8 text-sm text-zinc-500 flex flex-col items-center gap-3"
+                  >
+                    <p className="italic text-zinc-400">If you want to read the whole entire story...</p>
+                    <a 
+                      href="https://medium.com/@iamkrishkishore/mahiku-thats-the-most-cute-name-a-40s-guy-could-thought-of-f190d0550c24" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center gap-2 text-rose-500 hover:text-rose-600 bg-rose-50 hover:bg-rose-100 px-5 py-2.5 rounded-full transition-all border border-rose-100 shadow-sm hover:shadow-md active:scale-95"
+                    >
+                      <span className="font-medium tracking-wide">Read all the text here</span>
+                      <span className="text-lg">💌</span>
+                    </a>
+                  </motion.div>
+                </motion.div>
             </div>
           </motion.div>
         )}

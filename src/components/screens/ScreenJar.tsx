@@ -76,18 +76,14 @@ export function ScreenJar({ onContinue }: ScreenProps) {
       </motion.p>
 
       <div className="relative w-64 h-[22rem] flex flex-col justify-end items-center mb-8">
-        {/* The Glass Jar */}
-        <div className="absolute inset-x-0 bottom-0 h-80 border-4 border-zinc-200 border-t-0 rounded-b-[40px] bg-white/40 backdrop-blur-sm pointer-events-none z-30 shadow-inner"></div>
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-48 h-8 border-4 border-zinc-200 rounded-[20px] rounded-b-none z-30 pointer-events-none"></div>
-
         {/* The Notes inside the jar */}
-        <div className="absolute bottom-6 left-6 right-6 h-64 relative z-10 p-2">
+        <div className="absolute bottom-6 inset-x-6 h-64 p-2">
           <AnimatePresence>
             {memories.map((mem, i) => (
               i < count && (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: -300, rotate: Math.random() * 60 - 30, scale: 0.8 }}
+                  initial={{ opacity: 0, y: -200, rotate: (i % 2 === 0 ? -10 : 10), scale: 0.8 }}
                   animate={{ 
                     opacity: 1, 
                     y: 0, 
@@ -95,7 +91,7 @@ export function ScreenJar({ onContinue }: ScreenProps) {
                     scale: 1 
                   }}
                   transition={{ type: "spring", bounce: 0.35, duration: 1.2 }}
-                  className="absolute bottom-0 w-full bg-[#fdfaf5] p-3 rounded-lg shadow-sm border border-zinc-200 flex flex-col gap-2"
+                  className="absolute bottom-0 w-full bg-[#fdfaf5] p-3 rounded-lg shadow-md border border-zinc-200 flex flex-col gap-2"
                   style={{ bottom: `${i * 35}px`, zIndex: i }}
                 >
                   {mem.type === 'chat' ? (
@@ -125,6 +121,10 @@ export function ScreenJar({ onContinue }: ScreenProps) {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* The Glass Jar overlays the notes */}
+        <div className="absolute inset-x-0 bottom-0 h-80 border-4 border-zinc-200 border-t-0 rounded-b-[40px] bg-white/10 backdrop-blur-[2px] pointer-events-none shadow-inner"></div>
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-48 h-8 border-4 border-zinc-200 rounded-[20px] rounded-b-none pointer-events-none"></div>
       </div>
 
       {count < memories.length && (
